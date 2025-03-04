@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  max-height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10% 8%;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 7% 8%;
+    height: 10vh;
+  }
+}
+
+.header__logo {
+  height: 80px;
+  width: 80px;
+  transition: all 0.3s ease;
+  margin-left: 5px;
+}
+
+.header__logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.header__logo:hover,
+.header__logo-image:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+.header__desktop-nav {
+  display: none;
+}
+
+.header__desktop-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .header__desktop-nav {
+    display: block;
+  }
+}
+
+.header__desktop-nav ul li {
+  display: inline;
+}
+
+.header__desktop-nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.header__desktop-nav ul li a:hover {
+  color: #ff9800;
+}
+
+.header__burger-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.header__burger-button i {
+  color: white;
+  font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+  .header__burger-button {
+    display: none;
+  }
+}
+
+.header__mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .header__mobile-nav {
+    display: none;
+  }
+}
+
+.header__mobile-nav--open {
+  right: 0;
+}
+
+/* Texto en el menú móvil */
+.header__mobile-nav ul {
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+}
+
+.header__mobile-nav ul li {
+  margin: 1.5rem 0;
+}
+
+.header__mobile-nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.header__mobile-nav ul li a:hover {
+  color: #ff9800;
+}
+
+/* Botón de cerrar */
+.header__close-button {
+  position: absolute;
+  top: 8px;
+  right: 33px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 3rem;
+  color: white;
+}
